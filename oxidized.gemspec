@@ -28,9 +28,11 @@ Gem::Specification.new do |s|
       s.add_runtime_dependency 'net-telnet', '~> 0'
   end
 
-  s.add_development_dependency 'pry',      '~> 0'
-  s.add_development_dependency 'bundler',  '~> 1.10'
-  s.add_development_dependency 'rake',     '~> 10.0'
-  s.add_development_dependency 'minitest', '~> 5.8'
-  s.add_development_dependency 'mocha',    '~> 1.1'
+  s.add_development_dependency 'pry',        '~> 0'
+  s.add_development_dependency 'bundler',    '~> 1.10'
+  s.add_development_dependency 'rake',       '~> 10.0'
+  s.add_development_dependency 'minitest',   '~> 5.8'
+  s.add_development_dependency 'mocha',      '~> 1.1'
+  s.add_development_dependency 'git',        '~> 1'
+  s.add_development_dependency 'slack-api', '~> 0'
 end
