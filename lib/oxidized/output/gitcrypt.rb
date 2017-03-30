@@ -16,12 +16,6 @@ module Oxidized
 			@gitcrypt_unlock = @gitcrypt_cmd + " unlock"
 			@gitcrypt_lock = @gitcrypt_cmd + " lock"
 			@gitcrypt_adduser = @gitcrypt_cmd + " add-gpg-user --trusted "
-			@users = [
-				"0x07FEA8BA69203C2D",
-				"0x5D08BCDD4F156AD7",
-				"0x37183CEF550DF40B",
-				"0x3F3242C5B34D98C2",
-			]
 		end
 
 		def setup
@@ -45,7 +39,7 @@ module Oxidized
 		def crypt_init repo
 			repo.chdir do
 				system(@gitcrypt_init)
-				@users.each do |user|
+				@cfg.users.each do |user|
 					system("#{@gitcrypt_adduser} #{user}")
 				end
 				File.write(".gitattributes", "* filter=git-crypt diff=git-crypt\n.gitattributes !filter !diff")
